@@ -1,0 +1,15 @@
+public class CardDriver {
+
+ public static void main(String[] args) {
+
+
+IDCard id = new IDCard("", "");
+System.out.print(id.format());
+
+DriverLicense dl  = new DriverLicense("", "");
+System.out.print(dl.format());
+
+DebitCard dc = new DebitCard("", "");
+System.out.print(dc.format());
+
+ }}

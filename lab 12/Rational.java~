@@ -1,0 +1,67 @@
+import Java.lang.Math;
+public class Rational
+{
+  private int numerator1;
+  private int denominator1;
+  private int numerator2;
+  private int denominator2;
+  {
+    public Rational()
+    {
+      
+    }
+    public Rational(int num1, int den1,num2,den2)
+      
+    {
+      numerator1 = num1;
+      denominator1 = den1;
+      numerator2=num2;
+      denominator2=den2;
+    }
+    
+    
+    public normalize()
+    {
+     if denominator1 <0
+     {
+      denominator1=Math.abs(denominator1)
+      numerator1= numerator1 * -1
+     }
+    if  denominator2<0
+    {
+     denominator2=denominator2* -1
+    }
+    }
+  public add()
+  {
+    
+     den1 = denominator2 * numerator1;
+     num2 = denominator1 * numerator2;
+     den_multiply = denominator2*denominator1 //denominator
+     sum_num=den1 + num2 //numerator
+  }
+  public subtract()
+  {
+     num2 = denominator1 * numerator2;
+     den1 = denominator2 * numerator1;
+     den_multiply = denominator2*denominator1 //denominator
+     sum_num=den1 - num2 //numerator
+   
+  }
+  public multiply()
+  {
+     num2 = numerator2 * numerator2; //numerator
+     den1 = denominator2 * denominator1; //denominator
+
+  }
+  public divide()
+    
+  {
+   num2=   denominator1 * numerator2;
+   den1 =  numerator1 * denominator2;
+
+    
+  }
+ 
+
+}

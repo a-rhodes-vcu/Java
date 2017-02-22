@@ -1,0 +1,99 @@
+import java.util.Scanner;
+import java.io.*;
+
+
+public class LineNumbers{
+  private static void printHeading(){
+
+  String name = "Alexandrea Stylianou";
+  System.out.println(name);
+  System.out.println("CSC 201 Spring 2016");
+  System.out.println("Programming Project 3");
+  System.out.println("LineNumbers");
+  System.out.println(" ");}
+
+  public static void main (String args[]) throws IOException{
+
+    printHeading(); // this statement calls the printHeading method
+   
+
+ Scanner in = new Scanner(System.in);
+  String fileName = "C:/Users/Alexandrea/Desktop/messaround.txt"; //create string and set it to the file location
+ File textFile = new File(fileName); //file object
+//this works
+   Scanner file = new Scanner(textFile);
+   System.out.print("Please enter the file name \"messaround\": ");
+   String first = in.next();
+   System.out.println(" ");
+   System.out.println(" ");
+ 
+//THIS CODE WORKS!!!
+   int lineNumber = 1; 
+  while(file.hasNextLine()){
+  String line = file.nextLine();
+      if (line.length()>0){
+       System.out.println(lineNumber + "." + line);
+       lineNumber++;}
+      else if (line.length()==0){
+        System.out.println(" ");}}
+  file.close(); 
+ 
+    
+ 
+
+  }}
+
+  /*
+   * my old code that was wrong
+   Scanner in = new Scanner(System.in);
+   System.out.print("Please enter the file name: "); //propting user for textfile
+   String first = in.next();
+   File filereader = new File("messaround.txt"); //name of textfile
+   Scanner file = new Scanner(filereader);
+   System.out.println(" ");
+   System.out.println(" ");
+   */
+  
+  //THIS CODE WORKS!!!
+   /*int lineNumber = 1; 
+  while(file.hasNextLine()){
+  String line = file.nextLine();
+      if (line.length()>0){
+       System.out.println(lineNumber + "." + line);
+       lineNumber++;}
+      else if (line.length()==0){
+        System.out.println(" ");}}
+  file.close(); 
+ 
+    */
+ 
+//DISPLAYS NUMBERS ON EVERY LINE. WRONG CODE BUT DON'T DELETE!!!!!
+   /*int lineNumber = 1; //begins numbering the lines
+  while(file.hasNextLine()){
+    String line = file.nextLine();
+       System.out.println(lineNumber + "." + line);
+     lineNumber++;}
+  file.close();
+  
+  //THIS CODE WORKS!! Right output. dont alter
+   int lineNumber = 1; 
+  while(file.hasNextLine()){
+  String line = file.nextLine();
+      if (line.length()>0){
+       System.out.println(lineNumber + "." + line);
+       lineNumber++;}
+      else if (line.length()==0){
+        System.out.println(" ");}}
+  file.close(); 
+  */
+
+//Orginal code. DO NOT DELETE!!
+/* Scanner in = new Scanner(System.in);
+  String fileName = "C:/Users/Alexandrea/Desktop/messaround.txt"; //create string and set it to the file location
+ File textFile = new File(fileName); //file object
+//this works
+*/
+
+  
+   
+ 

@@ -1,0 +1,109 @@
+import java.util.Scanner;
+import java.io.IOException;
+public class RationalTester
+
+
+{
+ public static void main(String[] args)  throws IllegalArgumentException
+ {
+  Rational rat;
+
+ 
+  //instance of
+  //add exception
+  //reducing is done!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  
+Scanner in = new Scanner(System.in);
+
+System.out.println("Enter the numerator for rational number #1: ");
+int num1;  
+num1 = in.nextInt();
+
+System.out.println("Enter the denominator for rational number #1: ");
+int dem1;  
+dem1 = in.nextInt();
+
+System.out.println("Enter the numerator for rational number #2: ");
+int num2;  
+num2 = in.nextInt();
+
+System.out.println("Enter the denominator for rational number #2: ");
+int dem2;  
+dem2 = in.nextInt();
+Rational r1 = new Rational(num1, dem1);
+Rational r2 = new Rational(num2, dem2);
+
+if (dem1 == 0 || dem2==0)
+{
+throw new IllegalArgumentException("Denominator was zero.");
+} 
+char selection='0';
+
+while(selection!='8' )
+{
+System.out.println("Enter the corresponding number for the desired action");
+System.out.println("1. Addition");
+System.out.println("2. Subtraction");
+System.out.println("3. Multiplication");
+System.out.println("4. Division");
+System.out.println("5. Test for Equality");
+System.out.println("6. Change 1st rational number");
+System.out.println("7. Change 2nd rational number");
+System.out.println("8. Exit");
+selection = in.next().charAt(0);
+
+if(selection=='1')
+{
+System.out.printf("%s + %s = ", r1, r2);
+r1.add(r2);
+System.out.println(r1);
+}
+
+if(selection=='2')
+{
+System.out.printf("%s - %s = ", r1,r2);
+r1.subtract(r2);
+System.out.println(r1);
+
+}
+if(selection=='3')
+{
+System.out.printf("%s * %s = ", r1,r2);
+r1.multiply(r2);
+System.out.println(r1);
+
+}
+if(selection=='4')
+{
+System.out.printf("%s / %s = ", r1,r2);
+r1.divide(r2);
+System.out.println(r1);
+}
+if(selection=='5')
+{
+  r1.equals(r2);
+}
+
+if (selection=='6')
+{
+System.out.println(" Enter the numerator for rational number #1: ");  
+num1 = in.nextInt();
+r1.setNumerator(num1);
+System.out.println("Enter the denominator for rational number #1: ");
+dem1 = in.nextInt();
+r1.setDenominator(dem1);
+}
+
+if (selection=='7')
+{
+System.out.println("Enter the numerator for rational number #1: ");  
+num1 = in.nextInt();
+r2.setNumerator(num1);
+System.out.println("Enter the denominator for rational number #1: ");
+dem1 = in.nextInt();
+r2.setDenominator(dem2);
+}
+}
+System.out.println("Exiting");
+}
+}

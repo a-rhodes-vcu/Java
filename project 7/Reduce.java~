@@ -1,0 +1,22 @@
+public class Reduce
+(
+
+
+ public static void main(String[] args)  
+ {
+  int one = 10;
+  int two = 20;
+  int three = 10;
+  int four = 20;
+  
+  int total_1;
+  int total_2;
+  
+int total_1 = one * four +  two * three ;
+int total_2 = two * four //denominator
+  
+  System.out.printf(" %s / %s ", total_1,total2 );
+  
+}
+ 
+ }

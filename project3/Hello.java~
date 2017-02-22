@@ -1,0 +1,28 @@
+
+import java.util.Scanner;
+import java.io.*;
+
+
+public class Hello{
+
+
+
+
+    public static void main (String args[]){
+
+     String filename;
+     String line;
+     Scanner input = new Scanner(System.in);
+     File inFile;
+     
+     
+     
+     System.out.println("Please enter the name of the file followed by the extension (example: name of file .txt): ");
+      input = input.nextLine();
+
+      
+      if(input.equalsTo("Hello"))
+      {
+      System.out.println("Hello")
+      }
+    }}

@@ -1,0 +1,15 @@
+/**
+Question C
+*/
+public class SimpleLoop{
+ 
+  public static void main(String[] args){
+
+ int i = 3; 
+ int limit = 48;
+
+ while (i >= i && i <=limit){ 
+     System.out.println("i = " + (i=i*2) );}
+
+ }
+ }

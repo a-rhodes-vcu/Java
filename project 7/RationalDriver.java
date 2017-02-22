@@ -1,0 +1,119 @@
+/*The purpose of this project is to take user input, allow the user to decided which operation to take, and carry out those 
+ * operations in a seperate Rational Class.
+ * 
+ * */
+
+import java.util.Scanner;
+
+public class RationalDriver
+  {
+private static void printHeading(){
+
+  String name = "Alexandrea Stylianou";
+  System.out.println(name);
+  System.out.println("CSC 201 Spring 2016");
+  System.out.println("Programming Project 7");
+  System.out.println("Rational Numbers");
+  System.out.println(" ");}
+  public static void main(String[] args) 
+ {
+
+ printHeading();
+
+  
+Scanner in = new Scanner(System.in);
+//check
+System.out.println("Enter the numerator for rational number #1: ");
+int num1;  
+num1 = in.nextInt();
+
+System.out.println("Enter the denominator for rational number #1: ");
+int dem1;  
+dem1 = in.nextInt();
+
+
+System.out.println("Enter the numerator for rational number #2: ");
+int num2;  
+num2 = in.nextInt();
+
+System.out.println("Enter the denominator for rational number #2: ");
+int dem2;  
+dem2 = in.nextInt();
+
+
+
+Rational r1 = new Rational(num1, dem1);
+Rational r2 = new Rational(num2, dem2);
+System.out.println("The fractions are: " + num1 + " / " + dem1 + " And "  + num2 + " / " + dem2);
+
+
+char selection='0';
+
+while(selection!='8' ) //while the user doesn't exit the program, carry out these functions
+{
+System.out.println("Enter the corresponding number for the desired action");
+System.out.println("1. Addition"); //check
+System.out.println("2. Subtraction"); //check
+System.out.println("3. Multiplication"); //check
+System.out.println("4. Division"); //check
+System.out.println("5. Test for Equality"); //check
+System.out.println("6. Change 1st rational number"); //check
+System.out.println("7. Change 2nd rational number"); //check
+System.out.println("8. Exit");
+
+selection = in.next().charAt(0);
+
+if(selection=='1')
+{
+System.out.printf("%s + %s = Reduced ", r1, r2);
+r1.add(r2);
+System.out.println(r1);
+}
+if(selection=='2')
+{
+System.out.printf("%s - %s = Reduced ", r1,r2);
+r1.subtract(r2);
+System.out.println(r1);
+}
+if(selection=='3')
+{
+System.out.printf("%s * %s = Reduced ", r1,r2);
+r1.multiply(r2);
+System.out.println(r1);
+}
+if(selection=='4')
+{
+System.out.printf("%s / %s = Reduced ", r1,r2);
+r1.divide(r2);
+System.out.println(r1);
+}
+if(selection=='5')
+{
+  r1.equals(r2);
+}
+if (selection=='6')
+{
+System.out.println(" Enter the numerator for rational number #1: ");  
+num1 = in.nextInt();
+r1.setNumerator(num1);
+System.out.println("Enter the denominator for rational number #1: ");
+dem1 = in.nextInt();
+r1.setDenominator(dem1);
+}
+if (selection=='7')
+{
+System.out.println("Enter the numerator for rational number #2: ");  
+num2 = in.nextInt();
+r2.setNumerator(num2);
+System.out.println("Enter the denominator for rational number #2: ");
+dem2 = in.nextInt();
+r2.setDenominator(dem2);
+}
+}
+System.out.println("Exiting");
+System.exit(0);
+ in.close();
+ }
+
+}
+

@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class CountLoopdelete{
+  
+  public static void main(String[] args ){
+    
+    Scanner userinput = new Scanner(System.in);
+    System.out.print("Please enter a postive whole number and my program will give you the sum of it's intergers ");
+    System.out.println(" ");
+    int count = userinput.nextInt();
+    
+    int input = 1;
+    int sum = 0;
+    
+    while (input<100){
+     sum=count+count;
+        System.out.println("The sum of it's intergers is " + sum);
+    break;}
+  }}

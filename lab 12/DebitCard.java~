@@ -1,0 +1,21 @@
+public class DebitCard extends Card
+{ 
+  private String CardNumber;
+  private String PinNumber;
+  public DebitCared()
+  {
+    this(" ");
+  }
+  public DebitCard(String n, String CardNumber, String PinNumber )
+  {
+   super(n);
+   cardNum = CardNumber;
+   pinNum = PinNumber;
+  }
+  public String format()
+  {
+   String fmt = super.format();
+   System.out.println(" "); 
+    
+  }
+} 

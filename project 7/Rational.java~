@@ -1,0 +1,152 @@
+import java.lang.*;
+import java.io.IOException;
+
+public class Rational
+{
+  private int numerator;
+  private int denominator;
+  private int g;
+  
+  ////////////Constructors//////////////////
+  public Rational()
+  {
+      this.numerator = 0;
+      this.denominator =1;
+      //this.reduce();
+       
+  }
+    public Rational(int num, int den)
+      
+    {
+      this.numerator = num;
+      this.denominator = den;
+      this.normalize();
+      Rational rat;
+      //this.reduce();
+    }
+     //////////////normalize/////////////
+    private void normalize()
+    {
+      
+     if (this.denominator <0)
+     {
+      this.denominator=this.denominator * -1;
+      this.numerator= this.numerator * -1;
+     }
+
+    
+    }
+    ///////////////////////////////////
+  private void reduce(){
+        int divisor;
+        divisor = Rational.gcd(numerator, denominator);
+        numerator = numerator /  divisor;
+       denominator = denominator / divisor;
+        }
+
+///////////////////GCD///////////
+  static int gcd(int x, int y){
+        int r;
+        while (y != 0) {
+        r = x % y;
+        x = y;
+        y = r;
+            }
+        return x;
+        }
+
+     ///////////////setter/////////
+ public void setNumerator(int num)
+   {
+     this.numerator = num;
+     //this.reduce();
+   }    
+//////////getter////////////
+   public int getNumerator()
+   {
+     return this.numerator;
+   }
+   /////////////////setter//////
+   public void setDenominator(int den)
+    {
+    this.denominator = den;
+    //this.reduce();
+   }
+  ///////////////////getter//////
+   public int getDenominator()
+   {
+     return this.denominator;
+    
+   }
+
+  //////////////////////equals////////////
+  public boolean equals(Rational other)
+  {
+   if ((this.numerator * other.denominator) == (other.numerator * this.denominator))
+   {
+     System.out.println("The rational numbers are equal");
+       return true;
+      }
+      else 
+      {
+      System.out.println("The rational numbers are not equal");
+       return false;
+      }
+  }
+  public boolean equals(Object other) 
+  {
+    
+  if (! (other instanceof Rational)) {
+   return false;
+  }
+  else return true;
+  
+  //return equals(this,(Rational) other);
+ 
+     
+     }
+    /////////////////////////////////////////
+  public void add(Rational other)
+  {
+    
+     this.numerator = this.numerator * other.denominator +  this.denominator * other.numerator ;
+     this.denominator = this.denominator * other.denominator; //denominator
+     this.normalize();
+     this.reduce();
+
+     
+  }
+ 
+  public void subtract(Rational other)
+  {
+    
+   this.numerator = this.numerator * other.denominator -  this.denominator * other.numerator ;
+   this.denominator = this.denominator * other.denominator; //denominator
+   this.normalize();
+   this.reduce();
+  
+  }
+  public void multiply(Rational other)
+  {
+    
+    this.numerator = this.numerator * other.numerator;
+    this.denominator = this.denominator * other.denominator;
+    this.normalize();
+    this.reduce();
+  
+  }
+  public void divide(Rational other)
+    
+  {
+    this.numerator = this.numerator * other.denominator;
+    this.denominator = this.denominator * other.numerator;
+    this.normalize();
+    this.reduce();
+  }
+ 
+   public String toString()
+  {
+
+     return String.format("%s / %s", numerator, denominator );
+   }
+  }
