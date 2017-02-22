@@ -1,0 +1,16 @@
+public class CallByRef
+{
+  public static void main(String[] args)
+  {
+    int[] count = (0);
+    for(int i = 0; i < 3; i++) {
+      findBraces(count);
+      System.out.println("count is " + count[0]);
+    }
+  }
+  private static void findBraces(int[] count)
+  {
+    count[0]++;
+    System.out.println(count[0]);
+  }
+}

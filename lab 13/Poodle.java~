@@ -1,0 +1,7 @@
+piublic class Poodle extends Dog implements Pet, Fancy
+  
+{
+ public Poodle(String name, double weight, double age)
+   
+   super(name, weight, age)
+}

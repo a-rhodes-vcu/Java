@@ -1,0 +1,51 @@
+public class SimpleDateTest {
+  
+  public static void main(String[] args){
+    
+    
+ SimpleDate SimpleDateTest = new SimpleDate();
+    
+    //ArrayList<String> SimpleDate = new ArrayList<String>();
+ 
+    
+ /* 
+    customerNames.add("Chris");
+  customerNames.add("Lois");
+  customerNames.add("Meg");
+  customerNames.add("Peter");
+  customerNames.add("Stewie");
+//enhancecd for loop
+  for ( String name : customerNames )
+    System.out.println(name);
+  
+ System.out.println();
+ 
+ //add meg and brian
+  customerNames.add(3, "Brian");
+  customerNames.add(3, "Meg");
+  
+  System.out.println("Updated new arraylist: ");
+  
+  //emhanced for loop
+  for (String name: customerNames)
+      System.out.println(name);
+    //traditional for loop
+  
+    for(int i= customerNames.size()-1; i>0; i--) 
+    {
+      if (customerNames.get(i).equals("Meg"))
+        customerNames.remove(i);
+    }
+    
+    System.out.println();
+   
+    System.out.println("Megless array list. Updated new arraylist: ");
+    //enhanced for loop
+    for (String name: customerNames)
+      System.out.println(name);
+ */   
+   }
+}
+    
+  }
+}

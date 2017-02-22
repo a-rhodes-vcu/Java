@@ -1,0 +1,75 @@
+CSC	201	 Computer	Science	I
+1
+LAB	10 – Writing	to	a	File
+1. Complete the program, MemoPadCreator, to store multiple memos in a file. Prompt a user to enter a
+topic and the text of a memo (the text of the memo is stored as a single line and thus cannot contain a return
+character). Store the topic, the date stamp of the memo, and the memo message in a file.
+Hint: Creating a java.util.Date object with no arguments will initialize the Date object to the
+current time and date. A date stamp is obtained by calling the Date.toString() method.
+Open the output file in Wordpad to view the contents of the output and to check that the information is
+stored correctly. Fill in the blanks to complete this program:
+import __________;
+public class MemoPadCreator {
+ public static void main(String[] args) throws FileNotFoundException {
+ Date dateStamp;
+ Scanner console = new Scanner(System.in);
+ System.out.print("Enter the name of the output file: ");
+ String filename = console.nextLine();
+ PrintWriter out = ____________________;
+ boolean done = false;
+ while (!done){
+ System.out.println("Memo topic (enter -1 to end):");
+ String topic = console.nextLine();
+ if (topic.equals("-1")){
+ done = true;
+ }
+ else {
+ System.out.println("Memo text:");
+ String message = console.nextLine();
+ // Instantiate the Date object (dateStamp) here
+ // using the new operator
+_______________________________________;
+ out.println(topic + "\n" + dateStamp + "\n" + message);
+ }
+ }
+ // Close the output file
+ ____________________;
+ }
+}
+CSC	201	 Computer	Science	I
+2
+2. Complete the following program (MemoPadReader) to read multiple memos stored in a text file.
+Memos are stored in three lines. The first line is the memo topic, the second line is the date stamp, and
+the third line is the memo message. Display the memos one at a time, and allow the user to choose to
+view the next memo (if there is one). Part of the program code has been provided for you:
+____________________;
+public class MemoPadReader {
+ public static void main(String[] args) throws IOException {
+ Scanner console = new Scanner(System.in);
+ System.out.print("Input file: ");
+ String inputFileName = console.nextLine();
+
+ File inFile = ___________________
+ Scanner in = new Scanner(inFile);
+ boolean done = false;
+ while (in.hasNextLine() && !done){
+ String topic = ___________________;
+ String dateStamp = ___________________;
+ String message = ___________________;
+ System.out.println(topic + "\n" + dateStamp + "\n" + message);
+
+// Prompt to display the next memo if
+// there are more memos in the file
+ if (___________________) {
+ System.out.println("Do you want to read the next memo?");
+ String ans = console.nextLine();
+ if (ans.equalsIgnoreCase("n")) {
+ done = true;
+ }
+ }
+ }
+ }
+ }
+3. Submit both MemoPadCreator.java and MemoPadReader.java to the assigment link in
+Blackboard.
+CSC	201	 Computer	Science	I

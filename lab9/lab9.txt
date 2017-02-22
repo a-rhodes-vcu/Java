@@ -1,0 +1,17 @@
+CSC	201	 Computer	Science	I
+LAB	9 – ArrayLists
+1. Create a class called CustomerListerArrayList with a main method that declares and
+instantiates an ArrayList of String objects called customerName. Add each of the
+following Strings to the ArrayList. Chris
+Lois
+Meg
+Peter
+Stewie
+2. Write an enhanced for loop to display all the String objects.
+3. Add “Brian” so that it is the 4th name in the ArrayList. Now add “Meg” into the third
+position in the list (there will be two identical strings “Meg” in the list).
+4. Write another enhanced for loop to display all the String objects.
+5. Write a traditional for loop to remove “Meg” and display the revised ArrayList.
+6. In the comments text box in the Blackboard assignment link answer the following question: was
+“Meg” removed completely from the list?
+7. Upload your file CustomerListerArrayList.java to the assignment link in Blackboard.
