@@ -1,0 +1,61 @@
+import java.lang.Math;
+
+public class Circle
+{
+  private double radius;
+  public Circle()
+    
+  {
+   radius = 1.0;
+  }
+  
+  public Circle(double r) {
+  try
+    {
+   setRadius(r); 
+  }
+    catch (IllegalArgumentException e)
+    {
+     System.out.println(e); 
+     System.out.println("radius not set to null");
+     //radius = (double) null;
+    }
+  }
+  
+  public double getRadius()
+  {
+   return radius;
+  }
+  public void setRadius(double r) throws IllegalArgumentException
+  {
+    if (r> 0.0)
+      radius = r;
+    else 
+      throw new IllegalArgumentException("radius must be greater than zero");
+  }
+public double getDiameter()
+{
+  return 2 * radius;
+}
+public double getCircumference()
+{
+ return 2* Math.PI * radius;
+}
+  public double getArea()
+  {
+   return Math.PI * radius * radius; 
+  }
+public String toString() //over ride the object.
+{
+ String out;
+ out = "circle Radius is " + radius;
+return out;
+
+}
+
+}
+
+
+
+
+  

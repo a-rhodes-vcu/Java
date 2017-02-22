@@ -1,0 +1,1083 @@
+/*
+ * Alexandrea Stylianou
+ * CSC 201 PR-81
+ * Spring 2016
+ * Project 4 Popcorn
+*/
+import java.util.Scanner;
+import java.io.*;
+
+
+public class Popcorn{
+  private static void printHeading(){
+
+  String name = "Alexandrea Stylianou";
+  System.out.println(name);
+  System.out.println("CSC 201 Spring 2016");
+  System.out.println("Programming Project 4");
+  System.out.println("Popcorn");
+  System.out.println(" ");}
+
+  public static void main (String args[]) throws FileNotFoundException{
+
+    printHeading(); // this statement calls the printHeading method
+     String filename;
+     String line;
+     Scanner input = new Scanner(System.in);
+     File inFile;
+     
+     System.out.println("Please enter the name of the file followed by the extension (example: name of file .txt): ");
+       filename = input.nextLine();
+       inFile = new File(filename); //inputng file
+     while(!(inFile.exists() && !inFile.isDirectory())){ //if file does not exisit, keep prompting
+       System.out.print("Unable to the find file. Please enter file name again with the extension: ");
+         filename = input.nextLine();
+        inFile = new File(filename);}
+     
+ Scanner in = new Scanner(inFile); 
+  while(in.hasNextLine()) //while loop with a nested if statment, 
+  {
+      line = in.nextLine(); //read in ever line, save it in the variable "line"
+      line = line.trim(); //trim white space
+      if (line.length() == 0 ){ //if the line contains blank space...which is shouldn't because its been trimmed, but whatever, this will tell program to continue to run loop
+      continue;}
+      int comma_loc = line.indexOf(',');
+      String s1 = line.substring(0,comma_loc);
+      //System.out.println(s1);
+      String s2 = line.substring(comma_loc+1, line.length());
+      s2 = s2.trim();
+      //System.out.print(s2);
+      int space_loc = s2.indexOf(' ');
+      String s3 = s2.substring(space_loc, s2.length());
+      s3 = s3.trim();
+      s2 = s2.substring(0,space_loc);
+      s2 = s2.trim();
+      //this parses, this works. sample output:
+      //Orville's Acres 
+      //114.8 
+      //43801 
+      //Hoffman's Hills 
+      //77.2 
+      //36229 
+      //System.out.println(s1);
+      //System.out.println(s2);
+      //System.out.println(s3);
+      double d2 = Double.parseDouble(s2);
+      int i3 = Integer.parseInt(s3);
+      //int i4 = (int)(i3/d2);
+      //System.out.println(i4);
+      //this works.sample output:
+      //381.5418118466899 
+      //469.28756476683935 
+      //277.5391498881432 
+      //570.7969432314411
+      int i5 = (int)(i3/d2)/25;
+      System.out.println(i5);
+      //System.out.println(s1);
+      System.out.print(s1 + " " + "             ");
+      int n = 16;
+      int i = 15;
+      int m = 0;
+      while(m<=i5 && m<15){
+       System.out.print("*");
+        m++;}
+     if(i5<=n){
+     System.out.print("|");
+      }
+     if (i5>=n){
+       System.out.print("#");}
+     while( i5>i){
+     System.out.print("*");
+     i++;}
+     System.out.println();
+     // hard part is over, now must format spaces, and create methods and you are done! good job! did this all without any help, even from the internet!
+  } }
+    private static int praJava(int totalJars, double acres){
+  System.out.println(totalJars/acres);
+  return (int)Math.floor(totalJars/acres);
+  }
+  }
+   
+
+
+15
+Orville's Acres              ***************|
+18
+Hoffman's Hills              ***************#***
+11
+Jiffy Quick Farm              ************|
+22
+Jolly Good Plantation              ***************#*******
+
+
+
+
+
+
+
+
+
+
+/*
+ * Alexandrea Stylianou
+ * CSC 201 PR-81
+ * Spring 2016
+ * Project 4 Popcorn
+*/
+import java.util.Scanner;
+import java.io.*;
+
+
+public class Popcorn{
+  private static void printHeading(){
+
+  String name = "Alexandrea Stylianou";
+  System.out.println(name);
+  System.out.println("CSC 201 Spring 2016");
+  System.out.println("Programming Project 4");
+  System.out.println("Popcorn");
+  System.out.println(" ");}
+
+  public static void main (String args[]) throws FileNotFoundException{
+
+    printHeading(); // this statement calls the printHeading method
+     String filename;
+     String line;
+     Scanner input = new Scanner(System.in);
+     File inFile;
+     
+     System.out.println("Please enter the name of the file followed by the extension (example: name of file .txt): ");
+       filename = input.nextLine();
+       inFile = new File(filename); //inputng file
+     while(!(inFile.exists() && !inFile.isDirectory())){ //if file does not exisit, keep prompting
+       System.out.print("Unable to the find file. Please enter file name again with the extension: ");
+         filename = input.nextLine();
+        inFile = new File(filename);}
+     
+ Scanner in = new Scanner(inFile); 
+  while(in.hasNextLine()) //while loop with a nested if statment, 
+  {
+      line = in.nextLine(); //read in ever line, save it in the variable "line"
+      line = line.trim(); //trim white space
+      if (line.length() == 0 ){ //if the line contains blank space...which is shouldn't because its been trimmed, but whatever, this will tell program to continue to run loop
+      continue;}
+      int comma_loc = line.indexOf(',');
+      String s1 = line.substring(0,comma_loc);
+      //System.out.println(s1);
+      String s2 = line.substring(comma_loc+1, line.length());
+      s2 = s2.trim();
+      //System.out.print(s2);
+      int space_loc = s2.indexOf(' ');
+      String s3 = s2.substring(space_loc, s2.length());
+      s3 = s3.trim();
+      s2 = s2.substring(0,space_loc);
+      s2 = s2.trim();
+      //this parses, this works. sample output:
+      //Orville's Acres 
+      //114.8 
+      //43801 
+      //Hoffman's Hills 
+      //77.2 
+      //36229 
+      //System.out.println(s1);
+      //System.out.println(s2);
+      //System.out.println(s3);
+      double d2 = Double.parseDouble(s2);
+      int i3 = Integer.parseInt(s3);
+      //int i4 = (int)(i3/d2);
+      //System.out.println(i4);
+      //this works.sample output:
+      //381.5418118466899 
+      //469.28756476683935 
+      //277.5391498881432 
+      //570.7969432314411
+      int i5 = (int)(i3/d2)/25;
+      //System.out.println(i5);
+      //System.out.println(s1);
+      System.out.print(s1);
+      System.out.print("\t");
+      //System.out.printf("\");
+      int n = 16;
+      int i = 15;
+      int m = 0;
+      while(m<=i5 && m<15){
+       System.out.print("*");
+        m++;}
+     //System.out.print("\t");
+     if(i5<=n){
+     System.out.print("|");
+      }
+     if (i5>=n){
+       System.out.print("#");}
+     while( i5>i){
+     System.out.print("*");
+     i++;}
+     System.out.println();
+     // hard part is over, now must format spaces, and create methods and you are done! good job! did this all without any help, even from the internet!
+  } }
+    private static int praJava(int totalJars, double acres){
+  System.out.println(totalJars/acres);
+  return (int)Math.floor(totalJars/acres);
+  }
+  }
+   
+Orville's Acres	***************|
+Hoffman's Hills	***************#***
+Jiffy Quick Farm	************|
+Jolly Good Plantation	***************#*******
+
+
+
+/*
+ * Alexandrea Stylianou
+ * CSC 201 PR-81
+ * Spring 2016
+ * Project 4 Popcorn
+*/
+import java.util.Scanner;
+import java.io.*;
+
+
+public class Popcorn{
+  private static void printHeading(){
+
+  String name = "Alexandrea Stylianou";
+  System.out.println(name);
+  System.out.println("CSC 201 Spring 2016");
+  System.out.println("Programming Project 4");
+  System.out.println("Popcorn");
+  System.out.println(" ");}
+
+  public static void main (String args[]) throws FileNotFoundException{
+
+    printHeading(); // this statement calls the printHeading method
+     String filename;
+     String line;
+     Scanner input = new Scanner(System.in);
+     File inFile;
+     
+     System.out.println("Please enter the name of the file followed by the extension (example: name of file .txt): ");
+       filename = input.nextLine();
+       inFile = new File(filename); //inputng file
+     while(!(inFile.exists() && !inFile.isDirectory())){ //if file does not exisit, keep prompting
+       System.out.print("Unable to the find file. Please enter file name again with the extension: ");
+         filename = input.nextLine();
+        inFile = new File(filename);}
+     
+ Scanner in = new Scanner(inFile); 
+  while(in.hasNextLine()) //while loop with a nested if statment, 
+  {
+      line = in.nextLine(); //read in ever line, save it in the variable "line"
+      line = line.trim(); //trim white space
+      if (line.length() == 0 ){ //if the line contains blank space...which is shouldn't because its been trimmed, but whatever, this will tell program to continue to run loop
+      continue;}
+      int comma_loc = line.indexOf(',');
+      String s1 = line.substring(0,comma_loc);
+      //System.out.println(s1);
+      String s2 = line.substring(comma_loc+1, line.length());
+      s2 = s2.trim();
+      //System.out.print(s2);
+      int space_loc = s2.indexOf(' ');
+      String s3 = s2.substring(space_loc, s2.length());
+      s3 = s3.trim();
+      s2 = s2.substring(0,space_loc);
+      s2 = s2.trim();
+      double d2 = Double.parseDouble(s2);
+      int i3 = Integer.parseInt(s3);
+      int i5 = (int)(i3/d2)/25;
+      System.out.println(i5);
+      //System.out.println(s1);
+      //System.out.print(s1);
+      System.out.print(s1);
+      //System.out.println(s1.length());
+      if(s1.length()==15){
+        System.out.print("          ");}//10
+      if(s1.length()==16){
+      System.out.print("         ");}//9
+      if(s1.length()==21){
+      System.out.print("    ");}//4
+      int n = 16;
+      int i = 15;
+      int m = 0;
+      while(m<=i5 && m<15){
+       System.out.print("*");
+        m++;}
+      while(m>0 && i5<15){
+      System.out.print("   ");
+      m++;
+      break;}
+     if(i5<=n){
+     System.out.print("|");
+      }
+     if (i5>=n){
+       System.out.print("#");}
+     while( i5>i){
+     System.out.print("*");
+     i++;}
+     System.out.println();
+     // hard part is over, now must format spaces, and create methods and you are done! good job! did this all without any help, even from the internet!
+  } }
+    private static int praJava(int totalJars, double acres){
+  System.out.println(totalJars/acres);
+  return (int)Math.floor(totalJars/acres);
+  }
+  }
+   
+
+15
+Orville's Acres          ***************|
+18
+Hoffman's Hills          ***************#***
+11
+Jiffy Quick Farm         ************   |
+22
+Jolly Good Plantation    ***************#*******/*
+ * Alexandrea Stylianou
+ * CSC 201 PR-81
+ * Spring 2016
+ * Project 4 Popcorn
+*/
+import java.util.Scanner;
+import java.io.*;
+
+
+public class Popcorn{
+  private static void printHeading(){
+
+  String name = "Alexandrea Stylianou";
+  System.out.println(name);
+  System.out.println("CSC 201 Spring 2016");
+  System.out.println("Programming Project 4");
+  System.out.println("Popcorn");
+  System.out.println(" ");}
+
+  public static void main (String args[]) throws FileNotFoundException{
+
+    printHeading(); // this statement calls the printHeading method
+     String filename;
+     String line;
+     Scanner input = new Scanner(System.in);
+     File inFile;
+     
+     System.out.println("Please enter the name of the file followed by the extension (example: name of file .txt): ");
+       filename = input.nextLine();
+       inFile = new File(filename); //inputng file
+     while(!(inFile.exists() && !inFile.isDirectory())){ //if file does not exisit, keep prompting
+       System.out.print("Unable to the find file. Please enter file name again with the extension: ");
+         filename = input.nextLine();
+        inFile = new File(filename);}
+    System.out.println("\t\t\tPopcorn Co-op");
+    System.out.println();
+    System.out.println("\t\t\t  Production in Hundreds");
+    System.out.println("\t\t\t   of Pint Jars per Acre");
+    System.out.println("Farm Name\t\t\t   1   2   3   4   5   6");
+    System.out.println("\t\t\t---|---|---|---|---|---|");
+ Scanner in = new Scanner(inFile); 
+  while(in.hasNextLine()) //while loop with a nested if statment, 
+  {
+      line = in.nextLine(); //read in ever line, save it in the variable "line"
+      line = line.trim(); //trim white space
+      if (line.length() == 0 ){ //if the line contains blank space...which is shouldn't because its been trimmed, but whatever, this will tell program to continue to run loop
+      continue;}
+      int comma_loc = line.indexOf(',');
+      String s1 = line.substring(0,comma_loc);
+      //System.out.println(s1);
+      String s2 = line.substring(comma_loc+1, line.length());
+      s2 = s2.trim();
+      //System.out.print(s2);
+      int space_loc = s2.indexOf(' ');
+      String s3 = s2.substring(space_loc, s2.length());
+      s3 = s3.trim();
+      s2 = s2.substring(0,space_loc);
+      s2 = s2.trim();
+      double d2 = Double.parseDouble(s2);
+      int i3 = Integer.parseInt(s3);
+      int i5 = (int)(i3/d2)/25;
+      //System.out.println(i5);
+      //System.out.println(s1);
+      //System.out.print(s1);
+      System.out.print(s1);
+      System.out.print(s1.length());
+      if(s1.length()==15){
+        System.out.print("      \t");}//10
+      if(s1.length()==16){
+      System.out.print("  \t\t");}//9
+      if(s1.length()==21){
+      System.out.print("    \t");}//4
+      if(s1.length()==22){
+      System.out.print("  \t");}//3
+      int n = 16;
+      int i = 15;
+      int m = 1;
+      int j = 17;
+      int space = 12;
+      while(m<=i5 && m<=i){
+       System.out.print("*");
+       m++;}
+      while(space>=i5 && space<16 && i5<=15){  
+      System.out.print(" ");
+      space++;}
+     if(i5<=n){
+     System.out.print("|");
+      }
+     if (i5>=n){
+       System.out.print("#");}
+     while(i5>n){
+     System.out.print("*");
+     n++;}
+     System.out.println();
+     // hard part is over, now must format spaces, and create methods and you are done! good job! did this all without any help, even from the internet!
+  } }
+    private static int praJava(int totalJars, double acres){
+  System.out.println(totalJars/acres);
+  return (int)Math.floor(totalJars/acres);
+  }
+  }
+   
+
+	Popcorn Co-op
+
+			  Production in Hundreds
+			   of Pint Jars per Acre
+Farm Name			   1   2   3   4   5   6
+			---|---|---|---|---|---|
+Orville's Acres15      	***************|
+Hoffman's Hills15      	***************#**
+Jiffy Quick Farm16  		***********    |
+Jolly Good Plantation21    	***************#******
+Organically Grown Inc.22  	************    |
+> 
+> 
+
+
+/*
+ * Alexandrea Stylianou
+ * CSC 201 PR-81
+ * Spring 2016
+ * Project 4 Popcorn
+*/
+import java.util.Scanner;
+import java.io.*;
+
+
+public class Popcorn{
+  private static void printHeading(){
+
+  String name = "Alexandrea Stylianou";
+  System.out.println(name);
+  System.out.println("CSC 201 Spring 2016");
+  System.out.println("Programming Project 4");
+  System.out.println("Popcorn");
+  System.out.println(" ");}
+
+  public static void main (String args[]) throws FileNotFoundException{
+
+    printHeading(); // this statement calls the printHeading method
+     String filename;
+     String line;
+     Scanner input = new Scanner(System.in);
+     File inFile;
+     
+     System.out.println("Please enter the name of the file followed by the extension (example: name of file .txt): ");
+       filename = input.nextLine();
+       inFile = new File(filename); //inputng file
+     while(!(inFile.exists() && !inFile.isDirectory())){ //if file does not exisit, keep prompting
+       System.out.print("Unable to the find file. Please enter file name again with the extension: ");
+         filename = input.nextLine();
+        inFile = new File(filename);}
+    System.out.println("\t\t\tPopcorn Co-op");
+    System.out.println();
+    System.out.println("\t\t\t         Production in Hundreds");
+    System.out.println("\t\t\t         of Pint Jars per Acre");
+    System.out.println("Farm Name\t\t\t          1   2   3   4   5   6");
+    System.out.println("\t\t\t       ---|---|---|---|---|---|");
+ Scanner in = new Scanner(inFile); 
+  while(in.hasNextLine()) //while loop with a nested if statment, 
+  {
+      line = in.nextLine(); //read in ever line, save it in the variable "line"
+      line = line.trim(); //trim white space
+      if (line.length() == 0 ){ //if the line contains blank space...which is shouldn't because its been trimmed, but whatever, this will tell program to continue to run loop
+      continue;}
+      int comma_loc = line.indexOf(',');
+      String s1 = line.substring(0,comma_loc);
+      //System.out.println(s1);
+      String s2 = line.substring(comma_loc+1, line.length());
+      s2 = s2.trim();
+      //System.out.print(s2);
+      int space_loc = s2.indexOf(' ');
+      String s3 = s2.substring(space_loc, s2.length());
+      s3 = s3.trim();
+      s2 = s2.substring(0,space_loc);
+      s2 = s2.trim();
+      double d2 = Double.parseDouble(s2);
+      int i3 = Integer.parseInt(s3);
+      int i5 = (int)(i3/d2)/25;
+      String indent = "                                      "; 
+      String output = s1;
+      s1 += indent.substring(0, indent.length() - output.length());
+      System.out.print(s1);
+      if (s1.length() == 0 ){ 
+      continue;}
+      int n = 16;
+      int i = 15;
+      int m = 1;
+      int j = 17;
+      int space = 12;
+      while(m<=i5 && m<=i){
+       System.out.print("*");
+       m++;}
+      while(space>=i5 && space<16 && i5<=15){  
+      System.out.print(" ");
+      space++;}
+     if(i5<=n){
+     System.out.print("|");
+      }
+     if (i5>=n){
+       System.out.print("#");}
+     while(i5>n){
+     System.out.print("*");
+     n++;}
+     System.out.println();
+     // hard part is over, now must format spaces, and create methods and you are done! good job! did this all without any help, even from the internet!
+  } }
+    private static int praJava(int totalJars, double acres){
+  System.out.println(totalJars/acres);
+  return (int)Math.floor(totalJars/acres);
+  }
+  }
+   
+
+Popcorn Co-op
+
+			         Production in Hundreds
+			         of Pint Jars per Acre
+Farm Name			          1   2   3   4   5   6
+			       ---|---|---|---|---|---|
+Orville's Acres                       ***************|
+Hoffman's Hills                       ***************#**
+Jiffy Quick Farm                      ***********    |
+Jolly Good Plantation                 ***************#******
+Organically Grown Inc.                ************    |
+
+
+/*
+ * Alexandrea Stylianou
+ * CSC 201 PR-81
+ * Spring 2016
+ * Project 4 Popcorn
+*/
+import java.util.Scanner;
+import java.io.*;
+
+
+public class Popcorn{
+  private static void printHeading(){
+
+  String name = "Alexandrea Stylianou";
+  System.out.println(name);
+  System.out.println("CSC 201 Spring 2016");
+  System.out.println("Programming Project 4");
+  System.out.println("Popcorn");
+  System.out.println(" ");}
+
+  public static void main (String args[]) throws FileNotFoundException{
+
+    printHeading(); // this statement calls the printHeading method
+     String filename;
+     String line;
+     Scanner input = new Scanner(System.in);
+     File inFile;
+     
+     System.out.println("Please enter the name of the file followed by the extension (example: name of file .txt): ");
+       filename = input.nextLine();
+       inFile = new File(filename); //inputng file
+     while(!(inFile.exists() && !inFile.isDirectory())){ //if file does not exisit, keep prompting
+       System.out.print("Unable to the find file. Please enter file name again with the extension: ");
+         filename = input.nextLine();
+        inFile = new File(filename);}
+    System.out.println("\t\t\tPopcorn Co-op");
+    System.out.println();
+    System.out.println("\t\t\t         Production in Hundreds");
+    System.out.println("\t\t\t         of Pint Jars per Acre");
+    System.out.println("Farm Name\t\t\t          1   2   3   4   5   6");
+    System.out.println("\t\t\t       ---|---|---|---|---|---|");
+ Scanner in = new Scanner(inFile); 
+  while(in.hasNextLine()) //while loop with a nested if statment, 
+  {
+      line = in.nextLine(); //read in ever line, save it in the variable "line"
+      line = line.trim(); //trim white space
+      if (line.length() == 0 ){ // if document contains white space with 0 length continue to read
+      continue;}
+      int comma_loc = line.indexOf(','); //find comma
+      String s1 = line.substring(0,comma_loc); //parse at comma
+      String s2 = line.substring(comma_loc+1, line.length()); 
+      s2 = s2.trim(); 
+      int space_loc = s2.indexOf(' ');
+      String s3 = s2.substring(space_loc, s2.length());
+      s3 = s3.trim();
+      s2 = s2.substring(0,space_loc);
+      s2 = s2.trim();
+      double d2 = Double.parseDouble(s2);
+      int i3 = Integer.parseInt(s3);
+      int i5 = (int)(i3/d2)/25;
+      String indent = "                                      "; 
+      String output = s1;
+      s1 += indent.substring(0, indent.length() - output.length());
+      System.out.print(s1);
+      if (s1.length() == 0 ){ 
+      continue;}
+      int n = 16;
+      int i = 15;
+      int m = 1;
+      int j = 17;
+      int space = 12;
+      while(m<=i5 && m<=i){
+       System.out.print("*");
+       m++;}
+      for(i5=i5; i5<15; i5++)
+      {System.out.print(" ");}
+     if(i5<=n){
+     System.out.print("|");
+      }
+     if (i5>=n){
+       System.out.print("#");}
+     while(i5>n){
+     System.out.print("*");
+     n++;}
+     System.out.println();
+  } }
+    private static int praJava(int totalJars, double acres){
+  System.out.println(totalJars/acres);
+  return (int)Math.floor(totalJars/acres);
+  }
+  }
+   
+
+	Popcorn Co-op
+
+			         Production in Hundreds
+			         of Pint Jars per Acre
+Farm Name			          1   2   3   4   5   6
+			       ---|---|---|---|---|---|
+Orville's Acres                       ***************|
+Hoffman's Hills                       ***************#**
+Jiffy Quick Farm                      ***********    |
+Jolly Good Plantation                 ***************#******
+Organically Grown Inc.                ************   |
+
+
+
+/*
+ * Alexandrea Stylianou
+ * CSC 201 PR-81
+ * Spring 2016
+ * Project 4 Popcorn
+ * Each line of the input file should be sent to a separate method that extracts the farm name, acres, and jars
+of popcorn produced per acre from the string and print the bar chart line for it.
+*/
+import java.util.Scanner;
+import java.io.*;
+
+
+public class Popcorn{
+  private static void printHeading(){
+
+  String name = "Alexandrea Stylianou";
+  System.out.println(name);
+  System.out.println("CSC 201 Spring 2016");
+  System.out.println("Programming Project 4");
+  System.out.println("Popcorn");
+  System.out.println(" ");}
+
+  public static void main (String args[]) throws FileNotFoundException{
+
+    printHeading(); // this statement calls the printHeading method
+     String filename;
+     String line;
+     Scanner input = new Scanner(System.in);
+     File inFile;
+   
+     System.out.println("Please enter the name of the file followed by the extension (example: name of file .txt): ");
+       filename = input.nextLine();
+       inFile = new File(filename); //inputng file
+     while(!(inFile.exists() && !inFile.isDirectory())){ //if file does not exisit, keep prompting
+       System.out.print("Unable to the find file. Please enter file name again with the extension: ");
+         filename = input.nextLine();
+        inFile = new File(filename);}
+ farmHeading(); //print farm heading
+ Scanner in = new Scanner(inFile); 
+  while(in.hasNextLine()) //while loop with a nested if statment, 
+  {
+      line = in.nextLine(); //read in ever line, save it in the variable "line"
+      line = line.trim(); //trim white space
+      if (line.length() == 0 ){ // if document contains white space with 0 length continue to read
+      continue;}
+      int comma_loc = line.indexOf(','); //find comma
+      String s1 = line.substring(0,comma_loc); //parse at comma
+      String s2 = line.substring(comma_loc+1, line.length()); 
+      s2 = s2.trim(); 
+      int space_loc = s2.indexOf(' ');
+      String s3 = s2.substring(space_loc, s2.length());
+      s3 = s3.trim();
+      s2 = s2.substring(0,space_loc);
+      s2 = s2.trim();
+      double d2 = Double.parseDouble(s2);
+      int i3 = Integer.parseInt(s3);
+      int i5 = praJava(i3,d2);
+      String indent = "                                      "; 
+      String output = s1;
+      s1 += indent.substring(0, indent.length() - output.length());
+      farmName(s1);
+      if (s1.length() == 0 ){ 
+      continue;}
+      int n = 16;
+      int i = 15;
+      int m = 1;
+      int j = 17;
+      int space = 12;
+      while(m<=i5 && m<=i){
+       System.out.print("*");
+       m++;}
+      for(i5=i5; i5<15; i5++)
+      {System.out.print(" ");}
+     if(i5<=n){
+     System.out.print("|");
+      }
+     if (i5>=n){
+       System.out.print("#");}
+     while(i5>n){
+     System.out.print("*");
+     n++;}
+     System.out.println();
+  } }
+   
+  
+  /*************************************************farm heading****************************************/
+    private static void farmHeading(){
+    System.out.println("\t\t\tPopcorn Co-op");
+    System.out.println();
+    System.out.println("\t\t\t         Production in Hundreds");
+    System.out.println("\t\t\t         of Pint Jars per Acre");
+    System.out.println("Farm Name\t\t\t          1   2   3   4   5   6");
+    System.out.println("\t\t\t       ---|---|---|---|---|---|");} 
+  /********************************************farm name***********************************************/
+private static void farmName(String s1){
+  System.out.print(s1);}
+  /*******************************************acres per pint******************************************/
+ private static int praJava(int i3, double d2){
+   return (int)Math.floor(i3/d2)/25;}
+ /********************************************
+
+Popcorn Co-op
+
+			         Production in Hundreds
+			         of Pint Jars per Acre
+Farm Name			          1   2   3   4   5   6
+			       ---|---|---|---|---|---|
+Orville's Acres                       ***************|
+Hoffman's Hills                       ***************#**
+Jiffy Quick Farm                      ***********    |
+Jolly Good Plantation                 ***************#******
+Organically Grown Inc.                ************   |
+
+
+
+/*
+ * Alexandrea Stylianou
+ * CSC 201 PR-81
+ * Spring 2016
+ * Project 4 Popcorn
+ * Each line of the input file should be sent to a separate method that extracts the farm name, acres, and jars
+of popcorn produced per acre from the string and print the bar chart line for it.
+*/
+import java.util.Scanner;
+import java.io.*;
+
+
+public class Popcorn{
+  static int i5;
+  static  String line;
+  static String s1;
+  static String s2;
+  static String s3;
+
+  private static void printHeading(){
+
+  String name = "Alexandrea Stylianou";
+  System.out.println(name);
+  System.out.println("CSC 201 Spring 2016");
+  System.out.println("Programming Project 4");
+  System.out.println("Popcorn");
+  System.out.println(" ");}
+
+  public static void main (String args[]) throws FileNotFoundException{
+
+    printHeading(); // this statement calls the printHeading method
+     String filename;
+    
+     Scanner input = new Scanner(System.in);
+     File inFile;
+     System.out.println("Please enter the name of the file followed by the extension (example: name of file .txt): ");
+       filename = input.nextLine();
+       inFile = new File(filename); //inputng file
+     while(!(inFile.exists() && !inFile.isDirectory())){ //if file does not exisit, keep prompting
+       System.out.print("Unable to the find file. Please enter file name again with the extension: ");
+         filename = input.nextLine();
+        inFile = new File(filename);}
+ farmHeading(); //print farm heading
+ Scanner in = new Scanner(inFile); 
+  while(in.hasNextLine()) //while loop with a nested if statment, 
+  {
+      line = in.nextLine(); //read in ever line, save it in the variable "line"
+      line = line.trim(); //trim white space
+      if (line.length() == 0 ){ // if document contains white space with 0 length continue to read
+      continue;}
+      int comma_loc = line.indexOf(','); //find comma
+      String s1 = line.substring(0,comma_loc); //parse at comma
+      String s2 = line.substring(comma_loc+1, line.length()); 
+      s2 = s2.trim(); 
+      int space_loc = s2.indexOf(' ');
+      String s3 = s2.substring(space_loc, s2.length());
+      s3 = s3.trim();
+      s2 = s2.substring(0,space_loc);
+      s2 = s2.trim();
+      double d2 = Double.parseDouble(s2);
+      int i3 = Integer.parseInt(s3);
+      i5 = praJava(i3,d2);
+      String indent = "                                      "; 
+      String output = s1;
+      s1 += indent.substring(0, indent.length() - output.length());
+      farmName(s1);
+      if (s1.length() == 0 ){ 
+      continue;}  
+      chart();
+
+      
+  } }
+   
+  
+  /*************************************************farm heading****************************************/
+    private static void farmHeading(){
+    System.out.println("\t\t\tPopcorn Co-op");
+    System.out.println();
+    System.out.println("\t\t\t         Production in Hundreds");
+    System.out.println("\t\t\t         of Pint Jars per Acre");
+    System.out.println("Farm Name\t\t\t          1   2   3   4   5   6");
+    System.out.println("\t\t\t       ---|---|---|---|---|---|");} 
+    /*********************************************parse*************************************************/
+    
+  /********************************************farm name***********************************************/
+private static void farmName(String s1){
+  System.out.print(s1);}
+  /*******************************************acres per pint******************************************/
+ private static int praJava(int i3, double d2){
+   return (int)Math.floor(i3/d2)/25;}
+ /********************************************chart***************************************************/
+private static void chart(){  
+      int n = 16;
+      int i = 15;
+      int m = 1;
+      int j = 17;
+      int space = 12;
+      while(m<=i5 && m<=i){
+       System.out.print("*");
+       m++;
+      }
+      for(i5=i5; i5<15; i5++)
+      {System.out.print(" ");
+       }
+     if(i5<=n){
+     System.out.print("|");
+      }
+     if (i5>=n){
+       System.out.print("#");
+     }
+     while(i5>n){
+     System.out.print("*");
+     n++;
+     }
+     System.out.println();}}
+Popcorn Co-op
+
+			         Production in Hundreds
+			         of Pint Jars per Acre
+Farm Name			          1   2   3   4   5   6
+			       ---|---|---|---|---|---|
+whatdemfukfjdkaljfklfkjla             ********       |
+whatdemfu                             *******        |
+wha                                   ***************#*************************************
+whatdemfukdfdjfdl                     ***************#*********
+whahah                                ****           |
+
+
+
+
+
+/*
+ * Alexandrea Stylianou
+ * CSC 201 PR-81
+ * Spring 2016
+ * Project 4 Popcorn
+ * The purose of Popcorn is to input a text file with a farm name, followed by a comma, followed by a space. Then pints are listed as a double, acres are listed as integers.
+ * After the text file is parsed, a series of loops must be created in order to create a flow chart of each farm acres per pints in quanities of 25.
+ * This program accounts for quanities below zero and greater than 600.
+ * The program is divided into 6 methods: one to call the heading, one to print the heading for the chart, one to parse, one to print the farm name, one to calulate pints/acres and one to create the chart.
+*/
+import java.util.Scanner;
+import java.io.*;
+
+
+public class Popcorn{
+  //these are my static variables, any method within this class has access to these variables. very important. 
+  static int i5; 
+  static String line;
+  static String s1;
+  static String s2;
+  static String s3;
+  static double d2;
+  static int i3;
+  static int i6;
+  static int comma_loc;
+  static int space_loc;
+  
+  //print the heading
+  private static void printHeading(){
+
+  String name = "Alexandrea Stylianou";
+  System.out.println(name);
+  System.out.println("CSC 201 Spring 2016");
+  System.out.println("Programming Project 4");
+  System.out.println("Popcorn");
+  System.out.println(" ");}
+
+  public static void main (String args[]) throws FileNotFoundException{
+
+     printHeading(); // this statement calls the printHeading method
+    
+     Scanner input = new Scanner(System.in);
+     File inFile;
+     System.out.println("Please enter the name of the file followed by the extension (example: name of file .txt): ");
+     String filename = input.nextLine();
+     inFile = new File(filename); //inputng file
+       
+     
+     //if file does not exisit, keep prompting
+     while(!(inFile.exists() && !inFile.isDirectory())) 
+     {   
+         System.out.print("Unable to the find file. Please enter file name again with the extension: ");
+         filename = input.nextLine();
+         inFile = new File(filename);
+     }
+     
+
+ 
+ //print farm heading
+ farmHeading(); 
+ 
+ Scanner in = new Scanner(inFile); 
+ 
+  while(in.hasNextLine()) //while loop with a nested if statment, 
+  {
+      line = in.nextLine(); //read in ever line, save it in the variable "line"
+      line = line.trim(); //trim white space
+      if (line.length() == 0 ) // if document contains white space with 0 length continue to read
+      { 
+      continue;
+      }
+      parse (); //call method to parse 
+      
+      double d2 = Double.parseDouble(s2); //turn string into double
+      int i3 = Integer.parseInt(s3); //turn string into int
+      
+      i5 = praJava(i3,d2); //call method, acres per pints
+      i6 = i5/25; //divide into quanties of 25
+      
+      String indent = "                                      ";  //create a space to seperate the face name and chart
+      String output = s1;
+      s1 += indent.substring(0, indent.length() - output.length());
+      
+      farmName(s1); //call farm name method
+      
+      if (s1.length() == 0 )
+      { 
+      continue;
+      }  
+      
+      chart(); //call chart method
+ } 
+  }
+   
+  
+  /*************************************************farm heading****************************************/
+    private static void farmHeading()
+    {
+    System.out.println("\t\t\tPopcorn Co-op");
+    System.out.println();
+    System.out.println("\t\t\t         Production in Hundreds");
+    System.out.println("\t\t\t         of Pint Jars per Acre");
+    System.out.println("Farm Name                                1   2   3   4   5   6");
+    System.out.println("                                      ---|---|---|---|---|---|");
+    } 
+      /********************************************farm name***********************************************/
+    private static void parse () 
+    {
+    comma_loc = line.indexOf(','); //find comma
+    s1 = line.substring(0,comma_loc); //parse at comma
+    s2 = line.substring(comma_loc+1, line.length());
+    s2 = s2.trim(); 
+    space_loc = s2.indexOf(' '); //fins space
+    s3 = s2.substring(space_loc, s2.length()); //parse at space
+    s3 = s3.trim();
+    s2 = s2.substring(0,space_loc);
+    s2 = s2.trim();
+    }
+    
+  /********************************************farm name***********************************************/
+private static void farmName(String s1){
+  System.out.print(s1);
+}
+  /*******************************************acres per pint******************************************/
+ private static int praJava(int i3, double d2)
+ {
+   return (int)Math.floor(i3/d2); //acres per pints
+ }
+ /********************************************chart***************************************************/
+private static void chart()
+{  
+      int n = 16;
+      int i = 15;
+      int m = 1;
+      int j = 17;
+      int x = 600;
+      int y = 24;
+      while (i5 <1)
+      {
+    System.out.print("No graph to display because the arces per pints is equal to 0"); //error message if acres / pints is equal to zero
+      break;
+      }
+      while (i5>x)  
+      {
+        System.out.print ("No graph to display because the arces per pints is above 600"); //error message if acres / pints is over 600
+      break;
+      }
+      while(m<=i6 && m<=i && !(i5>x)){
+        System.out.print("*"); //if acres / pints in quanities of 25 is between 0 and 400
+       m++;
+      }
+      for(i6=i6; i6<i; i6++)
+      {System.out.print(" "); // if less than 400 create space 
+       }
+     if(i6<=n && !(i5>x) && !(i5<m)){ //if less than 400 create a bar
+     System.out.print("|");
+      }
+     if (i6>=n && !(i5>x)){
+       System.out.print("#"); //if meets mark at 400, create pound sign
+     }
+     while(n<i6 && i6<=y)
+     {
+     System.out.print("*"); //if over 400 continue with graph until it gets to 600
+     n++;
+     }
+     System.out.println();
+}
+}

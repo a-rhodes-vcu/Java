@@ -1,0 +1,169 @@
+/*
+ * Alexandrea Stylianou
+ * CSC 201 PR-81
+ * Spring 2016
+ * Project 4 Popcorn
+ * Each line of the input file should be sent to a separate method that extracts the farm name, acres, and jars
+of popcorn produced per acre from the string and print the bar chart line for it.
+*/
+import java.util.Scanner;
+import java.io.*;
+
+
+public class Popcorn{
+  //these are my static variables, any method within this class has access to these variables. very important. 
+  static int i5; 
+  static  String line;
+  static String s1;
+  static String s2;
+  static String s3;
+  static double d2;
+  static int i3;
+
+  private static void printHeading(){
+
+  String name = "Alexandrea Stylianou";
+  System.out.println(name);
+  System.out.println("CSC 201 Spring 2016");
+  System.out.println("Programming Project 4");
+  System.out.println("Popcorn");
+  System.out.println(" ");}
+
+  public static void main (String args[]) throws FileNotFoundException{
+
+     printHeading(); // this statement calls the printHeading method
+    
+     Scanner input = new Scanner(System.in);
+     File inFile;
+     System.out.println("Please enter the name of the file followed by the extension (example: name of file .txt): ");
+     String filename = input.nextLine();
+     inFile = new File(filename); //inputng file
+       
+     
+     while(!(inFile.exists() && !inFile.isDirectory())) //if file does not exisit, keep prompting
+     {   
+         System.out.print("Unable to the find file. Please enter file name again with the extension: ");
+         filename = input.nextLine();
+         inFile = new File(filename);
+     }
+ 
+ farmHeading(); //print farm heading
+ 
+ Scanner in = new Scanner(inFile); 
+ 
+ 
+  while(in.hasNextLine()) //while loop with a nested if statment, 
+  {   
+    line = in.nextLine(); //read in ever line, save it in the variable "line"
+      line = line.trim();//trim white space
+      if (line.length() == 0 )//if file has white space (no string values) continue
+      { 
+         continue;
+      }
+      //begin the parse
+      int comma_loc = line.indexOf(','); //find comma
+      String s1 = line.substring(0,comma_loc); //parse at comma
+      String s2 = line.substring(comma_loc+1, line.length());  //grab the substring from the comma till the end of the string
+      s2 = s2.trim(); //trim white space
+      int space_loc = s2.indexOf(' '); //parce at space
+      String s3 = s2.substring(space_loc, s2.length()); //grab the substring from the space to the end of the string
+      s3 = s3.trim(); //trim white space
+      s2 = s2.substring(0,space_loc); //grab from the start of the string to the locoation of the space
+      s2 = s2.trim(); //trim white space
+      
+      //turn those strings into intergers or doubles
+      d2 = Double.parseDouble(s2); 
+      i3 = Integer.parseInt(s3); 
+      
+      //call on method, rename it i5
+      i5 = praJava(i3,d2); 
+      
+      //create a space from the end of the farm name till the beginging of the chart
+       String indent = "                                      "; 
+      String output = s1;
+      s1 += indent.substring(0, indent.length() - output.length());
+      
+      //call on method to print farm name
+      farmName(s1); 
+      
+      //pass through white space
+      if (s1.length() == 0 ) 
+      { 
+      continue;
+      }  
+      
+      //call on method that creates chart
+      chart(); 
+
+      
+  }
+  }
+   
+  
+  /*************************************************farm heading****************************************/
+    private static void farmHeading()
+    {
+    System.out.println("\t\t\tPopcorn Co-op");
+    System.out.println();
+    System.out.println("\t\t\t         Production in Hundreds");
+    System.out.println("\t\t\t         of Pint Jars per Acre");
+    System.out.println("Farm Name\t\t\t          1   2   3   4   5   6");
+    System.out.println("\t\t\t       ---|---|---|---|---|---|");
+    } 
+
+   /********************************************farm name***********************************************/
+private static void farmName(String s1)
+{
+  System.out.print(s1);
+}
+  /*******************************************acres per pint******************************************/
+ private static int praJava(int i3, double d2)
+ {
+   return (int)Math.floor(i3/d2)/25;
+ }
+ /********************************************chart***************************************************/
+private static void chart(){  
+      int n = 16;
+      int i = 15;
+      int m = 1;
+      int j = 17;
+      int space = 12;
+      while(m<=i5 && m<=i)
+      {
+       System.out.print("*");
+       m++;
+      }
+      for(i5=i5; i5<15; i5++)
+      {
+        System.out.print(" ");
+       }
+     if(i5<=n)
+     {
+     System.out.print("|");
+      }
+     if (i5>=n)
+     {
+       System.out.print("#");
+     }
+     while(i5>n)
+     {
+     System.out.print("*");
+     n++;
+     }
+     System.out.println();}
+
+}
+
+
+Popcorn Co-op
+
+			         Production in Hundreds
+			         of Pint Jars per Acre
+Farm Name			          1   2   3   4   5   6
+			       ---|---|---|---|---|---|
+Orville's Acres                       ***************|
+Hoffman's Hills                       ***************#**
+Jiffy Quick Farm                      ***********    |
+Jolly Good Plantation                 ***************#******
+Organically Grown Inc.                ************   |
+> 

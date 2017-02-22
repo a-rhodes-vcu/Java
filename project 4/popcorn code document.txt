@@ -1,0 +1,79 @@
+/*
+ * Alexandrea Stylianou
+ * CSC 201 PR-81
+ * Spring 2016
+ * Project 4 Popcorn
+*/
+import java.util.Scanner;
+import java.io.*;
+
+
+public class Popcorn{
+  private static void printHeading(){
+
+  String name = "Alexandrea Stylianou";
+  System.out.println(name);
+  System.out.println("CSC 201 Spring 2016");
+  System.out.println("Programming Project 4");
+  System.out.println("Popcorn");
+  System.out.println(" ");}
+
+  public static void main (String args[]) throws FileNotFoundException{
+
+    printHeading(); // this statement calls the printHeading method
+     String filename;
+     String line;
+     Scanner input = new Scanner(System.in);
+     File inFile;
+     
+     System.out.println("Please enter the name of the file followed by the extension (example: name of file .txt): ");
+       filename = input.nextLine();
+       inFile = new File(filename); //inputng file
+     while(!(inFile.exists() && !inFile.isDirectory())){ //if file does not exisit, keep prompting
+       System.out.print("Unable to the find file. Please enter file name again with the extension: ");
+         filename = input.nextLine();
+        inFile = new File(filename);}
+     
+ Scanner in = new Scanner(inFile); 
+  while(in.hasNextLine()) //while loop with a nested if statment, 
+  {
+      line = in.nextLine(); //read in ever line, save it in the variable "line"
+      line = line.trim(); //trim white space
+      if (line.length() == 0 ){
+      continue;}
+      int comma_loc = line.indexOf(',');
+      String s1 = line.substring(0,comma_loc);
+      //System.out.println(s1);
+      String s2 = line.substring(comma_loc+1, line.length());
+      s2 = s2.trim();
+      //System.out.print(s2);
+      int space_loc = s2.indexOf(' ');
+      String s3 = s2.substring(space_loc, s2.length());
+      s3 = s3.trim();
+      s2 = s2.substring(0,space_loc);
+      s2 = s2.trim();
+      //this parses, this works. sample output:
+      //Orville's Acres 
+      //114.8 
+      //43801 
+      //Hoffman's Hills 
+      //77.2 
+      //36229 
+      //System.out.println(s1);
+      //System.out.println(s2);
+      //System.out.println(s3);
+      double d2 = Double.parseDouble(s2);
+      int i3 = Integer.parseInt(s3);
+      System.out.println(i3/d2);
+      //this works.sample output:
+      //381.5418118466899 
+      //469.28756476683935 
+      //277.5391498881432 
+      //570.7969432314411 
+  }}
+  
+  private static int praJava(int totalJars, double acres){
+  System.out.println(totalJars/acres);
+  return (int)Math.floor(totalJars/acres);
+  }
+  }

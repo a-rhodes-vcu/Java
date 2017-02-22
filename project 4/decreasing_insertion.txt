@@ -1,0 +1,30 @@
+Decreasing Insetion
+Ten Thousand Decreasing Insertion: 0.01013114355384914234
+Seven Thousand Five Hundred Decreasing Insertion: 0.00803310270671886428
+Five Thousand Decreasing Insertion: 0.00506589179536831580
+Two Thousand Five Hundred Decreasing Insertion: 0.00236045596224698784
+One Thousand Decreasing Insertion: 0.00083012781536240254
+Decreasing Insetion
+Ten Thousand Decreasing Insertion: 0.00833520010752408780
+Seven Thousand Five Hundred Decreasing Insertion: 0.00640228877182380529
+Five Thousand Decreasing Insertion: 0.00521886060636234106
+Two Thousand Five Hundred Decreasing Insertion: 0.00202187646007701005
+One Thousand Decreasing Insertion: 0.00083268796282709445
+Decreasing Insetion
+Ten Thousand Decreasing Insertion: 0.01598492073145507675
+Seven Thousand Five Hundred Decreasing Insertion: 0.01600156168996136330
+Five Thousand Decreasing Insertion: 0.00531934639437281476
+Two Thousand Five Hundred Decreasing Insertion: 0.00499548774010349916
+One Thousand Decreasing Insertion: 0.00107334182450813387
+Decreasing Insetion
+Ten Thousand Decreasing Insertion: 0.02077431660063666641
+Seven Thousand Five Hundred Decreasing Insertion: 0.01720867121946412226
+Five Thousand Decreasing Insertion: 0.01795751435281545128
+Two Thousand Five Hundred Decreasing Insertion: 0.00436697153756426815
+One Thousand Decreasing Insertion: 0.00089797172316252727
+Decreasing Insetion
+Ten Thousand Decreasing Insertion: 0.00822127354535950872
+Seven Thousand Five Hundred Decreasing Insertion: 0.00652389577641088181
+Five Thousand Decreasing Insertion: 0.00428120659748287835
+Two Thousand Five Hundred Decreasing Insertion: 0.00204299767665361287
+One Thousand Decreasing Insertion: 0.00077956490295605363

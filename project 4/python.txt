@@ -1,0 +1,30 @@
+Decreasing Selection
+Ten Thousand Decreasing Selection: 21.78732278979268244257
+Seven Thousand Five Hundred Decreasing Selection: 13.59806516855371683050
+Five Thousand Decreasing Selection: 6.09131725987415961754
+Two Thousand Five Hundred Decreasing Selection: 1.59982526993553619832
+One Thousand Decreasing Selection: 0.21281097791231218253
+Decreasing Selection
+Ten Thousand Decreasing Selection: 23.18325087525042249581
+Seven Thousand Five Hundred Decreasing Selection: 16.74151343117364376667
+Five Thousand Decreasing Selection: 5.64264501635294379867
+Two Thousand Five Hundred Decreasing Selection: 1.31225990617059551369
+One Thousand Decreasing Selection: 0.18778041615195206759
+Decreasing Selection
+Ten Thousand Decreasing Selection: 34.46848842493328390901
+Seven Thousand Five Hundred Decreasing Selection: 18.24751825705160968027
+Five Thousand Decreasing Selection: 8.29474593736597398674
+Two Thousand Five Hundred Decreasing Selection: 2.74670605026847169938
+One Thousand Decreasing Selection: 0.66976209829687149977
+Decreasing Selection
+Ten Thousand Decreasing Selection: 20.49270998009485822422
+Seven Thousand Five Hundred Decreasing Selection: 17.17688698869054064744
+Five Thousand Decreasing Selection: 11.77470446297706985206
+Two Thousand Five Hundred Decreasing Selection: 2.48846781574619058119
+One Thousand Decreasing Selection: 0.56690561376333903354 
+Decreasing Selection
+Ten Thousand Decreasing Selection: 38.75700104326010375644
+Seven Thousand Five Hundred Decreasing Selection: 20.62204798996421573065
+Five Thousand Decreasing Selection: 6.45423224377722704048
+Two Thousand Five Hundred Decreasing Selection: 1.34658892352197767650
+One Thousand Decreasing Selection: 0.22742173949220045870
